@@ -4,7 +4,7 @@ class BankAccount {
   }
 
   getBalance() {
-    return 0;
+    return this.balance;
   }
 }
 
