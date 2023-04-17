@@ -27,7 +27,7 @@ date || credit || debit || balance
 
 > Install Node.js
 > Run:
-  + node fileName
+  + node 
 
 This is how I came up with what I need to implement: 
 ![Diagram:](Diagram.png)
