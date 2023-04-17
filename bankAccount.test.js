@@ -29,6 +29,11 @@ describe('BankAccount', () => {
     expect(bankAccount.getBalance()).toEqual(100);
   });
 
+  test('throws an error if the withdrawal amount is greater than the balance', () => {
+    const bankAccount = new BankAccount();
+    expect(function(){bankAccount.withdraw(400)}).toThrow('Invalid request');
+  });
+
   
 
 
