@@ -15,6 +15,15 @@ describe('BankAccount', () => {
     expect(bankAccount.getBalance()).toEqual(100);
   })
 
+  test('has a balance of 300 with a deposit of 100 and one of 200', () => {
+    const bankAccount = new BankAccount();
+    bankAccount.deposit(100);
+    bankAccount.deposit(200);
+    expect(bankAccount.getBalance()).toEqual(300);
+  })
+
+
+
 
 
 })
