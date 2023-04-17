@@ -30,4 +30,4 @@ date || credit || debit || balance
   + node fileName
 
 This is how I came up with what I need to implement: 
-![Diagram:](Screenshot 2023-04-17 at 15.01.37.png)
+![Diagram:](Diagram.png)
