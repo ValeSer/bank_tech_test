@@ -27,4 +27,4 @@ date || credit || debit || balance
 
 > Install Node.js
 > Run:
-  + node <fileName>
+  + node <<fileName>>
