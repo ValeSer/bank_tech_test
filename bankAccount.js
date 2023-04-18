@@ -12,7 +12,7 @@ class BankAccount {
   }
 
   withdraw(amount) {
-    if(amount > this.balance){throw('Invalid request')};
+    if(amount > this.balance){throw('Invalid request')}
     this.balance -= amount;
   }
 
