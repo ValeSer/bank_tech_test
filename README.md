@@ -31,3 +31,4 @@ date || credit || debit || balance
 
 This is how I came up with what I need to implement: 
 ![Diagram:](Diagram.png)
+![Diagram2:](Diagram2.png)
