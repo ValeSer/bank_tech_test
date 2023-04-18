@@ -34,10 +34,12 @@ describe('BankAccount', () => {
     expect(function(){bankAccount.withdraw(400)}).toThrow('Invalid request');
   });
 
+  test('it prints a bank statement with the balance', () => {
+    const bankAccount = new BankAccount();
+    bankAccount.deposit(100);
+    console.log = jest.fn();
+    bankAccount.printBankStatement('|| balance \n 100');
+    expect(console.log).toHaveBeenCalledWith('|| balance \n 100');
+  });
   
-
-
-
-
-
 })

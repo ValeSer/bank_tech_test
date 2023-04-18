@@ -15,6 +15,10 @@ class BankAccount {
     if(amount > this.balance){throw('Invalid request')};
     this.balance -= amount;
   }
+
+  printBankStatement() {
+    console.log(`|| balance \n ${this.balance}`) ;
+  }
 }
 
 module.exports = BankAccount;
