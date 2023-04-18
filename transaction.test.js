@@ -18,4 +18,9 @@ describe('Transaction', () => {
     const transaction = new Transaction(200, 200);
     expect(transaction.getAmount()).toEqual(200);
   });
+
+  test('returns the balance', () => {
+    const transaction = new Transaction(200, 200);
+    expect(transaction.getBalance()).toEqual(200);
+  });
 })

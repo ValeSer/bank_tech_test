@@ -13,6 +13,14 @@ class Transaction {
   getAmount() {
     return this.amount;
   }
+
+  getBalance() {
+    return this.balance;
+  }
+
 }
+
+
+
 
 module.exports = Transaction;
