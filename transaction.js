@@ -1,9 +1,9 @@
 class Transaction {
-  constructor(amount, balance) {
+  constructor(amount, balance, type) {
     this.date = new Date();
     this.amount = amount;
     this.balance = balance;
-    
+    this.type = type;
   }
 
   getDate() {
@@ -18,9 +18,9 @@ class Transaction {
     return this.balance;
   }
 
+  getType() {
+    return this.type;
+  }
 }
-
-
-
 
 module.exports = Transaction;
