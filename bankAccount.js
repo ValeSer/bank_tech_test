@@ -41,9 +41,13 @@ class BankAccount {
   _logTransaction(transaction) {
     console.log(
       moment(transaction.date).format('DD/MM/YYYY') + ' || ' +
-      (transaction.type === 'deposit' ? transaction.amount.toFixed(2) : '').padStart(9) + ' || ' +
-      (transaction.type === 'withdrawal' ? transaction.amount.toFixed(2) : '').padStart(9) + ' || ' +
-      transaction.balance.toFixed(2).padStart(9) + ' ');
+      this._format(transaction.type === 'deposit' ? transaction.amount : 0) + ' || ' +
+      this._format(transaction.type === 'withdrawal' ? transaction.amount : 0) + ' || ' +
+      this._format(transaction.balance) + ' ');
+  }
+
+  _format(num) {
+    return num.toFixed(2).padStart(9);
   }
 }
 
