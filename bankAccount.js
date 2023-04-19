@@ -19,11 +19,22 @@ class BankAccount {
   withdraw(amount) {
     if (amount > this.balance) { throw new Error('Invalid request'); }
     this.balance -= amount;
+    const transaction = new Transaction(amount, this.balance, 'withdrawal');
+    this.transactions.push(transaction);
   }
 
   printBankStatement() {
+    console.log('  date'.padEnd(11) + '||' +
+      '  credit'.padEnd(11) + '||' +
+      '  debit'.padEnd(11) + '||' +
+      '  balance'.padEnd(11));
+
     this.transactions.forEach(transaction => {
-      console.log('  date   || credit  || debit   || balance ');
+      console.log(
+        transaction.date + '||' +
+        (transaction.type === 'deposit' ? transaction.amount : '') + '||' +
+        (transaction.type === 'withdrawal' ? transaction.amount : '') + '||' +
+        transaction.balance);
     });
   }
 }

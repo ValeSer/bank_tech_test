@@ -3,6 +3,15 @@ const BankAccount = require('./bankAccount');
 describe('BankAccount', () => {
   let bankAccount;
 
+  beforeAll(() => {
+    jest.useFakeTimers('modern');
+    jest.setSystemTime(new Date('2022-10-20'));
+  });
+
+  afterAll(() => {
+    jest.useRealTimers();
+  });
+
   beforeEach(() => {
     bankAccount = new BankAccount();
   });
@@ -29,13 +38,21 @@ describe('BankAccount', () => {
   });
 
   test('throws an error if the withdrawal amount is greater than the balance', () => {
-    expect(function () { bankAccount.withdraw(400); }).toThrow('Invalid request');
+    expect(function() { bankAccount.withdraw(400); }).toThrow('Invalid request');
   });
 
-  test('it prints a bank statement with the balance', () => {
+  test('it prints a bank statement with labels', () => {
     bankAccount.deposit(100);
     console.log = jest.fn();
-    const expected = '  date   || credit  || debit   || balance ';
+    const expected = '  date     ||  credit   ||  debit    ||  balance  ';
+    bankAccount.printBankStatement();
+    expect(console.log).toHaveBeenCalledWith(expected);
+  });
+
+  test('it prints a bank statement with transactions info', () => {
+    bankAccount.deposit(100);
+    console.log = jest.fn();
+    const expected = '20/10/2022 ||    100.00 ||           ||    100.00 ';
     bankAccount.printBankStatement();
     expect(console.log).toHaveBeenCalledWith(expected);
   });
