@@ -12,6 +12,8 @@ class BankAccount {
 
   deposit(amount) {
     this.balance += amount;
+    const transaction = new Transaction(amount, this.balance, 'deposit');
+    this.transactions.push(transaction);
   }
 
   withdraw(amount) {
@@ -20,7 +22,9 @@ class BankAccount {
   }
 
   printBankStatement() {
-    console.log(`|| balance \n ${this.balance}`);
+    this.transactions.forEach(transaction => {
+      console.log('  date   || credit  || debit   || balance ');
+    });
   }
 }
 

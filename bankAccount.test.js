@@ -35,7 +35,8 @@ describe('BankAccount', () => {
   test('it prints a bank statement with the balance', () => {
     bankAccount.deposit(100);
     console.log = jest.fn();
-    bankAccount.printBankStatement('|| balance \n 100');
-    expect(console.log).toHaveBeenCalledWith('|| balance \n 100');
+    const expected = '  date   || credit  || debit   || balance ';
+    bankAccount.printBankStatement();
+    expect(console.log).toHaveBeenCalledWith(expected);
   });
 });
