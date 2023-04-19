@@ -38,5 +38,5 @@ This is the output:
 ![Output:](Output.png)
 
  > Run in your REPL:
-  + node 
+  + node <br />
  Require your file and have fun!
