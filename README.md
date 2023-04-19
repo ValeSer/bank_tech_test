@@ -37,6 +37,6 @@ This is how I came up with what I need to implement:
 This is the output:
 ![Output:](Output.png)
 
-> Run in your REPL:
+ > Run in your REPL:
   + node 
-> Require your file and have fun!
+ Require your file and have fun!
