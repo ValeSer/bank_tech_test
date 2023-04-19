@@ -52,7 +52,7 @@ describe('BankAccount', () => {
   test('it prints a bank statement with transactions info', () => {
     bankAccount.deposit(100);
     console.log = jest.fn();
-    const expected = '20/10/2022 ||    100.00 ||           ||    100.00 ';
+    const expected = '20/10/2022 ||    100.00 ||      0.00 ||    100.00 ';
     bankAccount.printBankStatement();
     expect(console.log).toHaveBeenCalledWith(expected);
   });
