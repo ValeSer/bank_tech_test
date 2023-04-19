@@ -1,6 +1,9 @@
+const Transaction = require('./transaction');
+
 class BankAccount {
   constructor() {
     this.balance = 0;
+    this.transactions = [];
   }
 
   getBalance() {
@@ -12,12 +15,12 @@ class BankAccount {
   }
 
   withdraw(amount) {
-    if(amount > this.balance){throw('Invalid request')}
+    if (amount > this.balance) { throw new Error('Invalid request'); }
     this.balance -= amount;
   }
 
   printBankStatement() {
-    console.log(`|| balance \n ${this.balance}`) ;
+    console.log(`|| balance \n ${this.balance}`);
   }
 }
 
