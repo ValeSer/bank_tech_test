@@ -25,8 +25,8 @@ date || credit || debit || balance
 
 ### Quickstart
 
-> Install Node.js
-> Eslint to check the style
+> Install Node.js <br />
+> Eslint to check the style <br />
 > Coverage command to run: 
  + npx jest --coverage --watchAll=false
 
