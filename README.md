@@ -26,9 +26,17 @@ date || credit || debit || balance
 ### Quickstart
 
 > Install Node.js
-> Run:
-  + node 
+> Eslint to check the style
+> Coverage command to run: 
+ + npx jest --coverage --watchAll=false
 
 This is how I came up with what I need to implement: 
 ![Diagram:](Diagram.png)
 ![Diagram2:](Diagram2.png)
+
+This is the output:
+![Output:](Output.png)
+
+> Run in your REPL:
+  + node 
+> Require your file and have fun!
