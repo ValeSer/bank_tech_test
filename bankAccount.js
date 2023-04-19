@@ -1,4 +1,5 @@
 const Transaction = require('./transaction');
+const moment = require('moment');
 
 class BankAccount {
   constructor() {
@@ -31,10 +32,10 @@ class BankAccount {
 
     this.transactions.forEach(transaction => {
       console.log(
-        transaction.date + '||' +
-        (transaction.type === 'deposit' ? transaction.amount : '') + '||' +
-        (transaction.type === 'withdrawal' ? transaction.amount : '') + '||' +
-        transaction.balance);
+        moment(transaction.date).format('DD/MM/YYYY') + ' || ' +
+        (transaction.type === 'deposit' ? transaction.amount.toFixed(2) : '').padStart(9) + ' || ' +
+        (transaction.type === 'withdrawal' ? transaction.amount.toFixed(2) : '').padStart(9) + ' || ' +
+        transaction.balance.toFixed(2).padStart(9) + ' ');
     });
   }
 }
