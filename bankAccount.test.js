@@ -56,4 +56,15 @@ describe('BankAccount', () => {
     bankAccount.printBankStatement();
     expect(console.log).toHaveBeenCalledWith(expected);
   });
+  test('it prints a bank statement with transactions info in reverse order', () => {
+    bankAccount.deposit(100);
+    console.log = jest.fn();
+    jest.setSystemTime(new Date('2022-10-21'));
+    bankAccount.withdraw(50);
+    const expected1 = '21/10/2022 ||      0.00 ||     50.00 ||     50.00 ';
+    const expected2 = '20/10/2022 ||    100.00 ||      0.00 ||    100.00 ';
+    bankAccount.printBankStatement();
+    expect(console.log).toHaveBeenCalledWith(expected1);
+    expect(console.log).toHaveBeenLastCalledWith(expected2);
+  });
 });

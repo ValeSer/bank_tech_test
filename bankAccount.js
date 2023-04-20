@@ -26,7 +26,7 @@ class BankAccount {
 
   printBankStatement() {
     this._logHeader();
-    this.transactions.forEach(transaction => {
+    this.transactions.reverse().forEach(transaction => {
       this._logTransaction(transaction);
     });
   }
